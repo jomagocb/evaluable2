@@ -1,0 +1,8 @@
+INSERT INTO libros (cantidad_libros, nombre_autor, primer_apellido, fecha_publicacion, titulo, ciudad, pais, editorial) VALUES ('4', 'Karel', 'Kosik', '1957', 'Dialectica de lo concreto', 'Moscú', 'URSS', 'Dos cuadrados');
+INSERT INTO libros (cantidad_libros, nombre_autor, primer_apellido, fecha_publicacion, titulo, ciudad, pais, editorial) VALUES ('10', 'Gabriel', 'García Marquez', '1967', '100 años de soledad', 'Buenos Aires', 'Argentina', 'Editorial Sudamericana');
+INSERT INTO libros (cantidad_libros, nombre_autor, primer_apellido, fecha_publicacion, titulo, ciudad, pais, editorial) VALUES ('3', 'Karl', 'Marx', '1849', 'Trabajo asalariado y capital', 'Madrid', 'España', 'Biblioteca Nacional de España');
+INSERT INTO libros (cantidad_libros, nombre_autor, primer_apellido, fecha_publicacion, titulo, ciudad, pais, editorial) VALUES ('8', 'José', 'Martí', '1972', 'La edad de oro', 'La Habana', 'Cuba', 'Editorial Nueva Senda');
+INSERT INTO libros (cantidad_libros, nombre_autor, primer_apellido, fecha_publicacion, titulo, ciudad, pais, editorial) VALUES ('14', 'Mitch', 'Albon', '1997', 'Martes con mi viejo profesor', 'Nueva York', 'EEUU', 'Random Hause');
+INSERT INTO usuarios (nombre, email, direccion, codigo_postal) VALUES ('Damian Luque', 'damian@ejemplo.com', 'c/verde nº1. Sevilla', '41006');
+INSERT INTO usuarios (nombre, email, direccion, codigo_postal) VALUES ('Carmen Martín', 'carmenmartin@ejemplo.com', 'c/azul nº4. Sevilla', '41007');
+INSERT INTO usuarios (nombre, email, direccion, codigo_postal) VALUES ('Sara Lucas', 'saralucas@ejemplo.com', 'c/roja nº8. Sevilla', '41021');
