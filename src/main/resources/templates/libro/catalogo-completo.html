@@ -2,9 +2,71 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title th:text="${tituloNavegador}"></title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+	crossorigin="anonymous">
 </head>
 <body>
-<h1>Este es el catalogo</h1>
+	<!-- Navigation bar bootstrap -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" th:href="@{/biblioteca/inicio}">Biblioteca Municipal</a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" th:href="@{/clientes/listar}">Listar</a></li>
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Todos los class son de bootstrap -->
+	<div class="container">
+		<h1 class="text-primary" th:text="${titulo}"></h1>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Cantidad disponible</th>
+			<th>Nombre autor</th>
+			<th>Primer apellido</th>
+			<th>Fecha de publicación</th>
+			<th>Titulo obra</th>
+			<th>Ciudad</th>
+			<th>Pais</th>
+			<th>Editorial</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="libro : ${listadoCompleto}">
+			<td th:text="${libro.id}"></td>
+			<td th:text="${libro.cantidadLibros}"></td>
+			<td th:text="${libro.nombreAutor}"></td>
+			<td th:text="${libro.primerApellido}"></td>
+			<td th:text="${libro.publicadoEn}"></td>
+			<td th:text="${libro.titulo}"></td>
+			<td th:text="${libro.ciudad}"></td>
+			<td th:text="${libro.pais}"></td>
+			<td th:text="${libro.editorial}"></td>
+		</tr>
+		
+	</tbody>
+	
+</table>
+<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+		crossorigin="anonymous"></script>
 </body>
 </html>
