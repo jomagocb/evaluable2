@@ -46,6 +46,7 @@
 			<th>Ciudad</th>
 			<th>Pais</th>
 			<th>Editorial</th>
+			<th>Añadir a la cesta</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -59,6 +60,8 @@
 			<td th:text="${libro.ciudad}"></td>
 			<td th:text="${libro.pais}"></td>
 			<td th:text="${libro.editorial}"></td>
+			<td><a th:href="@{/catalogo/completo/un-libro-mas/ + '${libro.id}'}">Sumar</a></td>
+			
 		</tr>
 		
 	</tbody>
