@@ -60,7 +60,7 @@
 			<td th:text="${libro.ciudad}"></td>
 			<td th:text="${libro.pais}"></td>
 			<td th:text="${libro.editorial}"></td>
-			<td><a th:href="@{/catalogo/completo/un-libro-mas/ + '${libro.id}'}">Sumar</a></td>
+			<td><a th:href="@{'/catalogo/completo/un-libro-mas/' + ${libro.id}}"><button>Añadir libro</button></a></td>
 			
 		</tr>
 		

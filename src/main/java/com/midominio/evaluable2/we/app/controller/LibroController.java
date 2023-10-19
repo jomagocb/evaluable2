@@ -29,11 +29,10 @@ public class LibroController {
 		return "/libro/catalogo-completo";
 	}
 	@GetMapping("/completo/un-libro-mas/{id}")
-	public String sumaUnStock(Model model,@PathVariable Long id) {
+	public String sumaUnStock(@PathVariable Long id) {
 		libroService.sumaUnLibro(id);
-		model.addAttribute("listadoCompleto", libroService.findAll());
 
-		return "/libro/catalogo-completo";
+		return "redirect:/catalogo/completo";
 	}
 	
 	/*@GetMapping("/info")
