@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title th:text="${tituloNavegador}"></title>
+</head>
+<body>
+	<h1 th:text="${cabecera}"></h1>
+	
+	<form th:action="@{/libro/form}" th:object="${libro}" method="post">
+		Cantidad de Libros
+		<input type="text" th:field="*{cantidadLibros}">
+		<br>
+		Nombre autor
+		<input type="text" th:field="*{nombreAutor}">
+		<br>
+		Primer Apellido
+		<input type="text" th:field="*{primerApellido}">
+		<br>
+		Fecha publicación
+		<input type="text" th:field="*{publicadoEn}">
+		<br>
+		Titulo
+		<input type="text" th:field="*{titulo}">
+		<br>
+		Ciudad
+		<input type="text" th:field="*{ciudad}">
+		<br>
+		Pais
+		<input type="text" th:field="*{pais}">
+		<br>
+		Editorial
+		<input type="text" th:field="*{editorial}">
+		<br>
+		<br>
+		<input type="submit" value="Guardar">
+		<input type="hidden" th:field="*{id}"> 
+		
+	</form>
+	
+
+</body>
+</html>
