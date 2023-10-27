@@ -23,11 +23,11 @@
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav">
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" th:href="@{/lista-usuarios}">Usuario</a></li>
+						aria-current="page" th:href="@{/catalogo/completo}">Catalogo</a></li>
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav">
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" th:href="@{/catalogo/libro/form}">Añadir nuevo libro</a></li>			
+						aria-current="page" th:href="@{/usuario/form}">Añadir nuevo Usuario</a></li>			
 
 				</ul>
 			</div>
@@ -42,32 +42,22 @@
 	<thead>
 		<tr>
 			<th>Id</th>
-			<th>Cantidad disponible</th>
-			<th>Nombre autor</th>
-			<th>Primer apellido</th>
-			<th>Fecha de publicación</th>
-			<th>Titulo obra</th>
-			<th>Ciudad</th>
-			<th>Pais</th>
-			<th>Editorial</th>
-			<th>Añadir a la cesta</th>
+			<th>Nombre</th>
+			<th>Email</th>
+			<th>Dirección</th>
+			<th>Código Postal</th>
 		</tr>
 	</thead>
 	<tbody>
-		<tr th:each="libro : ${listadoCompleto}">
-			<td th:text="${libro.id}"></td>
-			<td th:text="${libro.cantidadLibros}"></td>
-			<td><a th:text="${libro.nombreAutor}" th:href="@{'/catalogo/libro/' + ${libro.nombreAutor}}"></a></td>
-			<td th:text="${libro.primerApellido}"></td>
-			<td th:text="${libro.publicadoEn}"></td>
-			<td th:text="${libro.titulo}"></td>
-			<td th:text="${libro.ciudad}"></td>
-			<td th:text="${libro.pais}"></td>
-			<td th:text="${libro.editorial}"></td>
-			<td><a th:href="@{'/catalogo/completo/un-libro-mas/' + ${libro.id}}">Añadir un ejemplar</a></td>
-			<td><a th:href="@{'/catalogo/completo/borrar/' + ${libro.id}}">Eliminar</a></td>
-			<td><a th:href="@{'/catalogo/libro/form/' + ${libro.id}}">Editar</a></td>
-		
+		<tr th:each="usuario : ${listadoCompleto}">
+			<td th:text="${usuario.id}"></td>
+			<td th:text="${usuario.nombre}"></td>
+			<td th:text="${usuario.email}"></td>
+			<td th:text="${usuario.direccion}"></td>
+			<td th:text="${usuario.codigoPostal}"></td>
+			<td><a th:href="@{'/lista-usuarios/borrar/' + ${usuario.id}}">Eliminar</a></td>
+			<td><a th:href="@{'/usuario/form/' + ${usuario.id}}">Editar</a></td>
+			
 			
 		</tr>
 		

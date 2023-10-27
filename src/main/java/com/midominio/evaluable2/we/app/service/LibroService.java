@@ -7,7 +7,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.midominio.evaluable2.we.app.controller.Coche;
 import com.midominio.evaluable2.we.app.model.dao.LibroRepository;
 import com.midominio.evaluable2.we.app.model.entity.Libro;
 
@@ -37,6 +36,9 @@ public class LibroService {
 	public Libro save(Libro libro) {
 		return libroRepository.save(libro);
 	}
+	public Iterable<Libro> listaPorNombre(String nombreAutor){
+		return libroRepository.findByNombreAutor(nombreAutor);
+	} 
 	
 	
 	

@@ -1,8 +1,6 @@
 package com.midominio.evaluable2.we.app.controller;
 
 
-import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,9 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import com.midominio.demos.coches.model.Coche;
 import com.midominio.evaluable2.we.app.model.entity.Libro;
 import com.midominio.evaluable2.we.app.service.LibroService;
 
@@ -64,5 +60,10 @@ public class LibroController {
 		return "/libro/form";
 	}
 	
+	@GetMapping("/libro/{nombreAutor}")
+	public String filtraNombre(@PathVariable String nombreAutor, Model model) {
+		model.addAttribute("listadoCompleto", libroService.listaPorNombre(nombreAutor));
+		return "/libro/catalogo-completo"; 
+	}
 	
 }

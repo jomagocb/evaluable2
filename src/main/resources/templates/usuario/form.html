@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title th:text="${tituloNavegador}"></title>
+</head>
+<body>
+	<h1 th:text="${cabecera}"></h1>
+	
+	<form th:action="@{/usuario/form}" th:object="${usuario}" method="post">
+		Nombre
+		<input type="text" th:field="*{nombre}">
+		<br>
+		Email
+		<input type="text" th:field="*{email}">
+		<br>
+		Dirección
+		<input type="text" th:field="*{direccion}">
+		<br>
+		Código Postal
+		<input type="text" th:field="*{codigoPostal}">
+		<br>
+		<br>
+		<input type="submit" value="Guardar">
+		<input type="hidden" th:field="*{id}"> 
+		
+	</form>
+	
+
+</body>
+</html>
